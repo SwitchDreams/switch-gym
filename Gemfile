@@ -65,3 +65,6 @@ end
 
 # Simple Rails app configuration
 gem 'figaro'
+
+# Flexible authentication solution for Rails with Warden.
+gem 'devise'
