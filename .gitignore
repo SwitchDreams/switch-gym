@@ -32,3 +32,6 @@
 .idea
 # Ignore application configuration
 /config/application.yml
+
+# Ignore coverage folder
+coverage
