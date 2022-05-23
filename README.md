@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API para o processo seletivo de front-end da SwitchDreams
 
-Things you may want to cover:
+## Configuração da variáveis de ambiente
 
-* Ruby version
+```yaml
+# Variável para criptografia do jwt
+DEVISE_JWT_SECRET_KEY: "SEGREDO"
 
-* System dependencies
+# Suas credenciais do psql
+DB_USER: ""
+DB_PASSWORD: ""
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
