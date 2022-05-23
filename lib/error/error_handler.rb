@@ -40,7 +40,7 @@ module Error
 
     def respond(error, status, message)
       json = Helpers::Render.json(error, status, message)
-      render json: json, status: status
+      render json:, status:
     end
   end
 end

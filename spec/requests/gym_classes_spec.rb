@@ -1,13 +1,13 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "/gym_classes", type: :request do
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     attributes_for(:gym_class, name: nil)
-  }
+  end
 
-  let(:valid_headers) {
+  let(:valid_headers) do
     {}
-  }
+  end
 
   describe "GET /index" do
     it "renders a successful response" do
@@ -30,11 +30,10 @@ RSpec.describe "/gym_classes", type: :request do
 
     context "with valid parameters" do
       it "creates a new GymClass" do
-        expect {
+        expect do
           post gym_classes_url,
                params: { gym_class: attributes_for(:gym_class, category_id: category.id) }, headers: valid_headers, as: :json
-        }.to change(GymClass, :count).by(1)
-        puts response.body
+        end.to change(GymClass, :count).by(1)
       end
 
       it "renders a JSON response with the new gym_class" do
@@ -47,10 +46,10 @@ RSpec.describe "/gym_classes", type: :request do
 
     context "with invalid parameters" do
       it "does not create a new GymClass" do
-        expect {
+        expect do
           post gym_classes_url,
                params: { gym_class: invalid_attributes }, as: :json
-        }.to change(GymClass, :count).by(0)
+        end.not_to change(GymClass, :count)
       end
 
       it "renders a JSON response with errors for the new gym_class" do
@@ -64,16 +63,16 @@ RSpec.describe "/gym_classes", type: :request do
 
   describe "PATCH /update" do
     context "with valid parameters" do
-      let(:new_attributes) {
-        { name: 'New name' }
-      }
+      let(:new_attributes) do
+        { name: "New name" }
+      end
 
       it "updates the requested gym_class" do
         gym_class = create(:gym_class)
         patch gym_class_url(gym_class),
               params: { gym_class: new_attributes }, headers: valid_headers, as: :json
         gym_class.reload
-        expect(gym_class.name).to eq('New name')
+        expect(gym_class.name).to eq("New name")
       end
 
       it "renders a JSON response with the gym_class" do
@@ -98,9 +97,9 @@ RSpec.describe "/gym_classes", type: :request do
   describe "DELETE /destroy" do
     it "destroys the requested gym_class" do
       gym_class = create(:gym_class)
-      expect {
+      expect do
         delete gym_class_url(gym_class), headers: valid_headers, as: :json
-      }.to change(GymClass, :count).by(-1)
+      end.to change(GymClass, :count).by(-1)
     end
   end
 end

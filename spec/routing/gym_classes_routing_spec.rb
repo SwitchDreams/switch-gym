@@ -10,7 +10,6 @@ RSpec.describe GymClassesController, type: :routing do
       expect(get: "/gym_classes/1").to route_to("gym_classes#show", id: "1")
     end
 
-
     it "routes to #create" do
       expect(post: "/gym_classes").to route_to("gym_classes#create")
     end
