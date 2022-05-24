@@ -83,7 +83,4 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: switch_gym_development
-  username: rails_api_template
-  password: <%= ENV["RAILS_API_TEMPLATE_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
