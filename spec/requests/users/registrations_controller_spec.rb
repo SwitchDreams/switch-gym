@@ -27,7 +27,8 @@ RSpec.describe Users::RegistrationsController, type: :request do
       it "updates user info" do
         user = create(:user)
         expect do
-          put "/api/users", params: { user: { name: new_name } }, headers: { "Authorization" => "Bearer #{user.token}" },
+          put "/api/users", params: { user: { name: new_name } },
+                            headers: { "Authorization" => "Bearer #{user.token}" },
                             as: :json
           user.reload
         end.to change(user, :name).to(new_name)

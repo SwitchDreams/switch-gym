@@ -40,7 +40,6 @@ RSpec.describe "/gym_classes", type: :request do
         post gym_classes_url,
              params: { gym_class: attributes_for(:gym_class, category_id: category.id) }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:created)
-        expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
 
@@ -56,7 +55,6 @@ RSpec.describe "/gym_classes", type: :request do
         post gym_classes_url,
              params: { gym_class: invalid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
   end
@@ -80,7 +78,6 @@ RSpec.describe "/gym_classes", type: :request do
         patch gym_class_url(gym_class),
               params: { gym_class: new_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:ok)
-        expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
 

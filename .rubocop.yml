@@ -12,6 +12,21 @@ Style/FrozenStringLiteralComment:
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
+Layout/LineLength:
+  Max: 125
+
+RSpec/ExampleLength:
+  Max: 7
+
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+
+Metrics/MethodLength:
+  IgnoredMethods: [ 'change', 'included' ]
+
+Metrics/AbcSize:
+  IgnoredMethods: [ 'nested_attributes_for', 'included' ]
+
 AllCops:
   NewCops: enable
   

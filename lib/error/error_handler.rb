@@ -22,17 +22,6 @@ module Error
         rescue_from Unauthorized do |e|
           respond(e.error, e.status, e.message)
         end
-        rescue_from WrongNonce do |e|
-          respond(e.error, e.status, e.message)
-        end
-
-        rescue_from WrongUser do |e|
-          respond(e.error, e.status, e.message)
-        end
-
-        rescue_from NoSignature do |e|
-          respond(e.error, e.status, e.message)
-        end
       end
     end
 

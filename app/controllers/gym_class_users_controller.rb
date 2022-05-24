@@ -1,5 +1,5 @@
 class GymClassUsersController < ApplicationController
-  before_action :set_gym_class_user, only: %i[show update destroy]
+  before_action :set_gym_class_user, only: %i[show destroy]
 
   # GET /gym_class_users
   def index

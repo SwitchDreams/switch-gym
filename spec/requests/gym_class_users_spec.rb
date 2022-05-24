@@ -31,7 +31,8 @@ RSpec.describe "/gym_class_users", type: :request do
       it "creates a new GymClassUser" do
         expect do
           post gym_class_users_url,
-               params: { gym_class_user: { user_id: user.id, gym_class_id: gym_class.id } }, headers: valid_headers, as: :json
+               params: { gym_class_user: { user_id: user.id, gym_class_id: gym_class.id } },
+               headers: valid_headers, as: :json
         end.to change(GymClassUser, :count).by(1)
       end
 
@@ -39,7 +40,6 @@ RSpec.describe "/gym_class_users", type: :request do
         post gym_class_users_url,
              params: { gym_class_user: { user_id: user.id, gym_class_id: gym_class.id } }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:created)
-        expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
 
@@ -55,7 +55,6 @@ RSpec.describe "/gym_class_users", type: :request do
         post gym_class_users_url,
              params: { gym_class_user: invalid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
   end

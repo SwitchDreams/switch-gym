@@ -36,7 +36,6 @@ RSpec.describe "/categories", type: :request do
         post categories_url,
              params: { category: attributes_for(:category) }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:created)
-        expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
 
@@ -52,7 +51,6 @@ RSpec.describe "/categories", type: :request do
         post categories_url,
              params: { category: invalid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
   end
@@ -74,7 +72,6 @@ RSpec.describe "/categories", type: :request do
         patch category_url(category),
               params: { category: new_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:ok)
-        expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
 
@@ -84,7 +81,6 @@ RSpec.describe "/categories", type: :request do
         patch category_url(category),
               params: { category: invalid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
   end
