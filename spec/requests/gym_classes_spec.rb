@@ -5,9 +5,8 @@ RSpec.describe "/gym_classes", type: :request do
     attributes_for(:gym_class, name: nil)
   end
 
-  let(:valid_headers) do
-    {}
-  end
+  let(:teacher) { create(:user, role: :teacher) }
+  let(:valid_headers) { { "Authorization" => "Bearer #{teacher.token}" } }
 
   describe "GET /index" do
     it "renders a successful response" do

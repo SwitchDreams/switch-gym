@@ -1,11 +1,10 @@
 require "rails_helper"
 
 RSpec.describe "/categories", type: :request do
+  let(:teacher) { create(:user, role: :teacher) }
   let(:invalid_attributes) { { name: nil } }
 
-  let(:valid_headers) do
-    {}
-  end
+  let(:valid_headers) { { "Authorization" => "Bearer #{teacher.token}" } }
 
   describe "GET /index" do
     it "renders a successful response" do

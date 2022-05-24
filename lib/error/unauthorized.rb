@@ -4,7 +4,7 @@ module Error
   class Unauthorized < StandardError
     attr_reader :status, :error, :message
 
-    def initialize(error: 423, status: :unauthorized, message: "Usuário não autorizado")
+    def initialize(error: 401, status: :unauthorized, message: "Usuário não autorizado")
       @error = error
       @status = status
       @message = message
