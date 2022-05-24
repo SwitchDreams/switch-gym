@@ -2,6 +2,8 @@
 
 API para o processo seletivo de front-end da SwitchDreams
 
+https://switch-gym.herokuapp.com/
+
 ## Configuração da variáveis de ambiente
 
 ```yaml
