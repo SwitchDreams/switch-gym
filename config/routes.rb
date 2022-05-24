@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gym_class_users
   scope :api, defaults: { format: :json } do
     devise_for :users, skip: [:registrations],
                        path_names: {
