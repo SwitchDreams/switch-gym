@@ -2,7 +2,9 @@
 
 API para o processo seletivo de front-end da SwitchDreams
 
-https://switch-gym.herokuapp.com/
+https://gym.switchdreams.com.br/
+
+[:memo: Docs](https://documenter.getpostman.com/view/12265896/Uz59MeAK#57d01a84-2799-4754-a891-7f08936f2a5e)
 
 ## Configuração da variáveis de ambiente
 
